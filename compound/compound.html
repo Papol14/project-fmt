@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Compound Interest Calculator</title>
+    <link rel="stylesheet" href="compound.css" />
+    <script src="compound.js"></script>
+  </head>
+
+  <body>
+    <header>
+      <button data-text="Awesome" class="button">
+        <span class="actual-text">&nbsp;FMT&nbsp;</span>
+        <span class="hover-text" aria-hidden="true">&nbsp;FMT&nbsp;</span>
+      </button>
+      <nav>
+        <a href="../home/index.html" class="home"><img src="../icons/system-outline-41-home.gif" width="25px" height="25px"></a>
+      </nav>
+
+    </header>
+
+
+    <div id="calculator">
+      <h2 class="title">Compound Interest Calculator</h2>
+      <label for="principal">Principal:</label>
+      <input
+        type="number"
+        placeholder="Enter your principal"
+        id="principal"
+        step="any"
+      />
+      <label for="rate">Annual Interest Rate (%):</label>
+      <input
+        type="number"
+        placeholder="Enter your interest rate"
+        id="rate"
+        step="any"
+      />
+      <label for="time">Time (years):</label>
+      <input type="number" placeholder="Enter your time" id="time" />
+      <button class="calculate"onclick="calculateCompoundInterest()">Calculate</button>
+      <div id="result"></div>
+    </div>
+    <div class="description">
+    <p>Compound interest is a powerful force in the world of finance. Unlike
+      simple interest, which is calculated only on the initial amount of money,
+      compound interest takes into account the accumulated interest from
+      previous periods.
+      <details>
+        <summary>See more</summary>
+        <p> As a result, over time, the interest earned or paid
+        becomes a larger portion of the overall balance, leading to exponential
+        growth. For investments, compound interest means that your money earns
+        interest not just on the initial investment, but also on the interest it
+        has already earned. This compounding effect can lead to substantial growth
+        in the value of your investment over extended periods. On the flip side,
+        compound interest can work against borrowers who have loans with interest
+        that compounds. Over time, the amount of interest added to the loan can
+        accumulate, making it more challenging to pay off the debt. In summary,
+        compound interest is a crucial concept in financial planning, investment,
+        and borrowing. It highlights the potential for wealth accumulation through
+        consistent saving and smart investment choices, as well as the importance
+        of understanding the impact of interest on loans and debts.</p>
+      </details></div></p>
+
+      <div class="back-to-top">
+        <a id="back-to-top" href="#top">
+          Back to Top 
+<img src="../icons/system-outline-11-arrow-up.gif" class="arrowup" width="25px" height="25px"></a>
+      </div>
+  </body>
+</html>

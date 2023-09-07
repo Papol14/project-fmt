@@ -1,0 +1,367 @@
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --main-color: rgba(255, 255, 0, 0.938);
+}
+
+/* Reset some default styles */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Basic styling */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #333;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+  max-width: 12000px;
+  padding: 5px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+nav ul li {
+  display: flex;
+  justify-content: center;
+  margin-right: 40px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #fff;
+}
+
+@media (max-width: 1440px) {
+  nav ul li a {
+    padding: 5px 15px 5px 15px;
+  }
+  nav ul {
+    top: 0px;
+  }
+  nav ul {
+    padding-bottom: 2px;
+    margin-top: 0px;
+    margin-bottom: 2px;
+    gap: 10px;
+    align-items: center;
+  }
+  header .button {
+    margin-right: 20px;
+  }
+  .banner-content {
+    padding-block: 50px;
+  }
+  .products-content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Four columns */
+    gap: 20px; /* Gap between items */
+    list-style: none; /* Remove list bullets */
+    margin: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  nav ul {
+    margin-right: 50px;
+    gap: 10px;
+  }
+  nav ul li {
+    margin-right: 10px;
+  }
+  nav ul li a {
+    padding: 5px 10px 5px 10px;
+  }
+  header .button {
+    margin-right: 0px;
+  }
+  .products-content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    gap: 20px; /* Gap between items */
+    list-style: none; /* Remove list bullets */
+    margin: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  header,
+  .button {
+    padding-left: 0px;
+  }
+  nav ul {
+    margin-left: 5px;
+  }
+  .products-content {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr); /* One columns */
+    gap: 20px; /* Gap between items */
+    list-style: none; /* Remove list bullets */
+    margin: 30px;
+  }
+}
+
+@media (max-width: 380px) {
+  header {
+    padding-left: 0px;
+  }
+  header .button,
+  .hover-text,
+  .actual-text {
+    margin-top: 1px;
+  }
+  nav ul li,
+  .back-to-top {
+    font-size: 12px;
+    margin-right: 10px;
+  }
+  header .button {
+    font-size: 23px;
+    margin-right: 5px;
+  }
+  .products-content {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr); /* Two columns */
+    gap: 20px; /* Gap between items */
+    list-style: none; /* Remove list bullets */
+    margin: 20px;
+  }
+}
+
+@media (max-width: 322px) {
+  header {
+    padding-left: 0px;
+  }
+  header .button,
+  .hover-text,
+  .actual-text {
+    margin-top: 3px;
+  }
+  nav ul {
+    margin-inline: 0px;
+    gap: 0px;
+    top: 0px;
+  }
+  nav ul li {
+    margin-right: 5px;
+    font-size: 13px;
+  }
+  div .button {
+    margin-right: 0px;
+  }
+}
+
+.changelog {
+  padding-left: 5px;
+}
+
+/* === removing default button style ===*/
+.button {
+  height: auto;
+  background: transparent;
+  padding: 1px;
+  border: none;
+}
+
+/* button styling */
+.button {
+  --border-right: 6px;
+  --text-stroke-color: rgba(255, 255, 255, 0.6);
+  --animation-color: yellow;
+  --fs-size: 2em;
+  letter-spacing: 3px;
+  text-decoration: none;
+  font-size: var(--fs-size);
+  font-family: "Arial";
+  position: relative;
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--text-stroke-color);
+}
+/* this is the text, when you hover on button */
+.hover-text {
+  position: absolute;
+  box-sizing: border-box;
+  content: attr(data-text);
+  color: var(--animation-color);
+  width: 0%;
+  inset: 0;
+  border-right: var(--border-right) solid var(--animation-color);
+  overflow: hidden;
+  transition: 0.5s;
+  -webkit-text-stroke: 1px var(--animation-color);
+}
+/* hover */
+.button .hover-text {
+  width: 100%;
+  filter: drop-shadow(0 0 10px var(--animation-color));
+}
+
+#tools {
+  margin-top: 20px;
+  gap: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ... (previous styles) ... */
+
+.banner {
+  background-image: url("banner.jpg");
+  text-decoration: none;
+  backdrop-filter: blur(10px);
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  height: 100vh;
+  display: flex;
+  position: relative;
+  align-items: center;
+}
+.banner-content {
+  margin: 7%;
+  position: relative;
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  color: white;
+  padding: 60px 30px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+span.title:hover {
+  text-shadow: yellow 0px 0px 15px;
+  color: yellow;
+  transition: 0.3s;
+}
+
+nav ul a {
+  text-decoration: none;
+  background-color: rgb(68, 68, 58);
+  color: white;
+  padding: 3px 7px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  margin-top: 5px;
+}
+
+.product a:hover {
+  color: var(--main-color);
+}
+
+.product {
+  background-color: rgb(68, 68, 58); /* Optional: Add background color */
+  padding: 10px; /* Optional: Add padding to individual items */
+  border-radius: 3px;
+  border: 2px solid white;
+}
+
+.product:hover {
+  box-shadow: 0px 0px 20px yellow;
+  border: 2px solid yellow;
+  color: yellow;
+  transition: 0.3s;
+}
+
+.product a {
+  text-decoration: none; /* Remove underline from links */
+  color: white; /* Optional: Set link color */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.product img {
+  max-width: 100%;
+  height: auto;
+}
+
+.product h2 {
+  margin: 10px 20px;
+}
+
+.product p {
+  margin: 5px 0;
+}
+
+nav ul a:hover,
+nav ul a:active {
+  background-color: var(--main-color);
+  color: rgb(82, 82, 72);
+  box-shadow: 0 0 15px yellow;
+  transition: 0.3s;
+}
+
+.about-content {
+  margin: 50px 20px;
+  color: white;
+  text-align: center;
+  text-align: justify;
+}
+
+.about {
+  display: flex;
+  justify-content: center;
+  font-size: 21px;
+  font-weight: 300;
+}
+
+footer {
+  margin: 10px;
+  color: white;
+  font-style: italic;
+  font-size: 15px;
+  text-align: center;
+}
+
+.back-to-top a {
+  text-decoration: none;
+  background-color: rgb(68, 68, 58);
+  color: white;
+  padding: 3px 8px;
+  border-radius: 3px;
+  display: flex;
+  justify-content: center;
+}
+
+.back-to-top {
+  font-style: normal;
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.back-to-top a:hover {
+  color: var(--main-color);
+}
+
+.arrowup {
+  margin-left: 5px;
+}
+
+.back-to-top a {
+  padding-inline: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}

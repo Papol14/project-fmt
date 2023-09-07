@@ -1,0 +1,304 @@
+/* Reset some default styles */
+* {
+  scroll-behavior: smooth;
+  padding: 0;
+  margin: 0;
+}
+
+/* Define custom CSS variables in :root */
+:root {
+  --yellow: rgba(255, 255, 0, 0.938); /* Define a custom yellow color */
+}
+
+/* Styles for the overall page */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #333;
+  color: #333;
+}
+
+/* Header styles */
+header {
+  background-image: url(banner.jpg);
+  background-size: cover;
+  background-color: #333;
+  color: #fff;
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+  padding: 7px 10px 7px 10px;
+  z-index: 1;
+}
+
+/* Navigation menu styles */
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-right: 50px;
+}
+
+nav ul li {
+  display: flex;
+  justify-content: center;
+  margin-right: 30px;
+}
+
+/* Button styling */
+.button {
+  /* Removing default button styles */
+  height: auto;
+  background: transparent;
+  padding: 1px;
+  border: none;
+
+  /* Button appearance */
+  --border-right: 6px;
+  --text-stroke-color: rgba(255, 255, 255, 0.6);
+  --animation-color: yellow;
+  --fs-size: 2em;
+  letter-spacing: 3px;
+  text-decoration: none;
+  font-size: var(--fs-size);
+  font-family: "Arial";
+  position: relative;
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--text-stroke-color);
+  background-color: #333;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Text animation when hovering on the button */
+.hover-text {
+  position: absolute;
+  box-sizing: border-box;
+  content: attr(data-text);
+  color: var(--animation-color);
+  width: 0%;
+  inset: 0;
+  border-right: var(--border-right) solid var(--animation-color);
+  overflow: hidden;
+  transition: 0.5s;
+  -webkit-text-stroke: 1px var(--animation-color);
+}
+
+/* Hover effect for the button */
+.button:hover .hover-text {
+  width: 100%;
+  filter: drop-shadow(0 0 23px var(--animation-color));
+}
+
+/* Media queries for responsive design */
+@media (max-width: 400px) {
+  .back-to-top a {
+    font-size: 15px;
+    margin-right: 10px;
+  }
+  nav .home {
+    height: 29px;
+    width: 25px;
+  }
+}
+
+@media (min-width: 1440px) {
+  /* Adjust button and header styles for screens >= 1440px width */
+  header .button {
+    font-size: 25px;
+    margin-right: 10px;
+  }
+  header {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 280px) {
+  header .button {
+    scale: 0.9;
+  }
+  nav .home {
+    height: 29px;
+    width: 25px;
+  }
+  header {
+    padding-block: 5px;
+  }
+  #calculator {
+    margin-top: 70px;
+    padding: 0px 0px 0px 0px;
+  }
+}
+
+/* Product card styles */
+.product {
+  box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.5);
+  padding: 0px 10px;
+  margin: 20px;
+  text-align: center;
+  border-radius: 5px;
+  background-color: rgb(68, 68, 58);
+  cursor: pointer;
+  color: white;
+  transition: 0.3s;
+}
+
+/* Hover effect for product cards */
+.product:hover {
+  box-shadow: 0px 0px 14px var(--yellow);
+  color: var(--yellow);
+}
+
+.product:active {
+  background-color: rgb(82, 82, 72);
+}
+
+/* Calculator section styles */
+#calculator {
+  box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  margin: 30px 20px 3px 20px;
+  text-align: center;
+  border-radius: 5px;
+  background-color: rgb(68, 68, 58);
+  color: white;
+  transition: 0.3s;
+  text-align: left;
+}
+
+/* Label styles */
+label {
+  display: flex;
+  font-size: 13pt;
+  padding-top: 10px;
+}
+
+/* Title styles */
+.title {
+  text-align: center;
+  padding-bottom: 5px;
+}
+
+/* Input field styles */
+input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  margin: 6px 0;
+  border: 1px solid var(--yellow);
+  border-radius: 5px;
+  box-sizing: border-box;
+  background-color: rgb(41, 41, 38);
+  color: white;
+  font-size: 12pt;
+}
+
+/* Placeholder text styles */
+input::placeholder {
+  font-style: italic;
+}
+
+/* Calculate button styles */
+.calculate {
+  display: block;
+  width: 100%;
+  padding: 10px 10px;
+  background-color: #333;
+  box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: 0.3s 0.1s;
+  font-weight: bolder;
+  margin-top: 10px;
+  font-size: large;
+}
+
+/* Hover effect for the calculate button */
+.calculate:hover {
+  font-weight: bolder;
+  font-size: large;
+  background-color: var(--yellow);
+  color: rgb(82, 82, 72);
+  box-shadow: 0 0 15px yellow;
+  transition: 0.3s;
+}
+
+/* Active state for the calculate button */
+.calculate:active {
+  scale: 0.97;
+}
+
+/* Result section styles */
+#result {
+  margin-top: 20px;
+  font-weight: bold;
+  color: var(--yellow);
+}
+
+/* Description section styles */
+.description {
+  color: white;
+  text-align: left;
+  margin: 40px 30px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+/* Back-to-top button styles */
+.back-to-top {
+  font-style: normal;
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Arrow-up icon styles */
+.arrowup {
+  margin-left: 5px;
+}
+
+/* Back-to-top button styles */
+.back-to-top a {
+  padding-inline: 10px;
+  margin-inline: 80px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Link styles */
+a {
+  background-color: #333;
+  text-decoration: none;
+  color: white;
+  padding: 3px 7px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* Hover effect for links */
+nav a:hover {
+  color: var(yellow);
+  border: 2px solid var(--yellow);
+  box-shadow: 0px 0px 10px yellow;
+  transition: 0.3s;
+}
+
+/* Navigation link styles */
+nav a {
+  border: 2px solid white;
+}
+
+/* Hover effect for the back-to-top link */
+#backtotop a:hover {
+  color: var(--yellow);
+}
+
+/* Active state for links */
+a:active {
+  scale: 0.97;
+}
