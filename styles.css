@@ -33,6 +33,19 @@ header {
   z-index: 1000;
 }
 
+nav{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+h1{
+  font-size: 2rem;
+  margin-left: 10px;
+  color: yellow;
+}
+
 nav ul {
   list-style: none;
   display: flex;
@@ -110,111 +123,27 @@ nav a {
     padding-left: 0px;
   }
   nav ul {
-    margin-left: 5px;
+    display: none;
+  }
+  .product{
+    max-width: 200px;
   }
   .products-content {
     display: grid;
-    grid-template-columns: repeat(1, 1fr); /* One columns */
-    gap: 20px; /* Gap between items */
+    grid-template-columns: repeat(2, 2fr); /* One columns */
+    gap: 10px; /* Gap between items */
     list-style: none; /* Remove list bullets */
-    margin: 30px;
+    margin: 10px;
+  }
+  .product h2{
+    font-size: 1rem;
   }
 }
 
-@media (max-width: 380px) {
-  header {
-    padding-left: 0px;
-  }
-  header .button,
-  .hover-text,
-  .actual-text {
-    margin-top: 1px;
-  }
-  nav ul li,
-  .back-to-top {
-    font-size: 12px;
-    margin-right: 10px;
-  }
-  header .button {
-    font-size: 23px;
-    margin-right: 5px;
-  }
-  .products-content {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr); /* Two columns */
-    gap: 20px; /* Gap between items */
-    list-style: none; /* Remove list bullets */
-    margin: 20px;
-  }
-}
 
-@media (max-width: 322px) {
-  header {
-    padding-left: 0px;
-  }
-  header .button,
-  .hover-text,
-  .actual-text {
-    margin-top: 3px;
-  }
-  nav ul {
-    margin-inline: 0px;
-    gap: 0px;
-    top: 0px;
-  }
-  nav ul li {
-    margin-right: 5px;
-    font-size: 13px;
-  }
-  div .button {
-    margin-right: 0px;
-  }
-}
 
 .changelog {
   padding-left: 5px;
-}
-
-/* === removing default button style ===*/
-.button {
-  height: auto;
-  background: transparent;
-  padding: 1px;
-  border: none;
-}
-
-/* button styling */
-.button {
-  --border-right: 6px;
-  --text-stroke-color: rgba(255, 255, 255, 0.6);
-  --animation-color: yellow;
-  --fs-size: 2em;
-  letter-spacing: 3px;
-  text-decoration: none;
-  font-size: var(--fs-size);
-  font-family: "Arial";
-  position: relative;
-  text-transform: uppercase;
-  color: transparent;
-  -webkit-text-stroke: 1px var(--text-stroke-color);
-}
-/* this is the text, when you hover on button */
-.hover-text {
-  position: absolute;
-  box-sizing: border-box;
-  content: attr(data-text);
-  color: var(--animation-color);
-  width: 0%;
-  inset: 0;
-  border-right: var(--border-right) solid var(--animation-color);
-  overflow: hidden;
-  transition: 0.5s;
-  -webkit-text-stroke: 1px var(--animation-color);
-}
-/* hover */
-.button .hover-text {
-  width: 100%;
-  filter: drop-shadow(0 0 10px var(--animation-color));
 }
 
 #tools {
@@ -324,7 +253,7 @@ nav ul a:active {
 .about {
   display: flex;
   justify-content: center;
-  font-size: 21px;
+  font-size: 1.5rem;
   font-weight: 300;
 }
 
@@ -332,7 +261,7 @@ footer {
   margin: 10px;
   color: white;
   font-style: italic;
-  font-size: 15px;
+  font-size: 0.85rem;
   text-align: center;
 }
 
