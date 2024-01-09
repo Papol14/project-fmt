@@ -33,14 +33,13 @@ header {
   z-index: 1000;
 }
 
-nav{
+nav {
   width: 100%;
   display: flex;
   justify-content: space-between;
 }
 
-
-h1{
+h1 {
   font-size: 2rem;
   margin-left: 10px;
   color: yellow;
@@ -79,8 +78,8 @@ nav a {
     gap: 10px;
     align-items: center;
   }
-  header .button {
-    margin-right: 20px;
+  .categories{
+    display: none;
   }
   .banner-content {
     padding-block: 50px;
@@ -96,7 +95,7 @@ nav a {
 
 @media (max-width: 768px) {
   nav ul {
-    margin-right: 50px;
+    margin-right: 10px;
     gap: 10px;
   }
   nav ul li {
@@ -125,7 +124,10 @@ nav a {
   nav ul {
     display: none;
   }
-  .product{
+  .categories {
+    display: block;
+  }
+  .product {
     max-width: 200px;
   }
   .products-content {
@@ -135,12 +137,10 @@ nav a {
     list-style: none; /* Remove list bullets */
     margin: 10px;
   }
-  .product h2{
+  .product h2 {
     font-size: 1rem;
   }
 }
-
-
 
 .changelog {
   padding-left: 5px;
@@ -155,7 +155,6 @@ nav a {
   align-items: center;
 }
 
-/* ... (previous styles) ... */
 
 .banner {
   background-image: url("banner.jpg");
